@@ -596,7 +596,7 @@ function  billCalculator(amount){
         
     }
     
-    if(amount>=50 && amount<201){
+    if(amount >=50 && amount<201){
         tip =amount*0.25;
         result=  amount-tip
         johntips.push(tip);
