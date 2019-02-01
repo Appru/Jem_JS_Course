@@ -727,30 +727,6 @@ if (john.calcBMI() > mark.calcBMI()) {
  * Loops and iteration
  */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 // for loop
 for (var i = 1; i <= 20; i += 2) {
@@ -823,6 +799,55 @@ Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the 
 
 GOOD LUCK 😀
 */
+
+//var tips = [];
+//var finalAmounts = [];
+
+var johnBills = {
+  bills: [124, 48, , 268, 42],
+  tips: [],
+  finalAmounts: [],
+  billCalc: function() {
+    for (var i = 0; i < this.bills.length; i++) {
+      var bills = this.bills[i];
+
+      if (bills <= 50) {
+        var tip = bills * 0.2;
+        var finalAmount = tip + bills;
+        this.tips.push(tip);
+        this.finalAmounts.push(finalAmount);
+      }
+
+      if (bills >= 50 && bills < 201) {
+        var tip = bills * 0.15;
+        var finalAmount = tip + bills;
+        this.tips.push(tip);
+        this.finalAmounts.push(finalAmount);
+      }
+
+      if (bills > 202) {
+        var tip = bills * 0.1;
+        var finalAmount = tip + bills;
+        this.tips.push(tip);
+        this.finalAmounts.push(finalAmount);
+      }
+    }
+  }
+};
+
+johnBills.billCalc();
+
+var tips = johnBills.tips;
+var amount = johnBills.finalAmounts;
+
+console.log("these are tips " + tips);
+console.log("these are final amounts " + amount);
+
+
+
+
+
+
 
 /*
 var john = {
