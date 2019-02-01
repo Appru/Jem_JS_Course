@@ -1,16 +1,8 @@
 console.log("hello again");
 
-
-
-
-
-
-
-
-
 /*****************************
-* Variables and data types
-*/
+ * Variables and data types
+ */
 /*
 var firstName = 'John';
 console.log(firstName);
@@ -33,11 +25,9 @@ var johnMark = 'John and MArk';
 var if = 23;
 */
 
-
-
 /*****************************
-* Variable mutation and type coercion
-*/
+ * Variable mutation and type coercion
+ */
 /*
 var firstName = 'John';
 var age = 28;
@@ -61,11 +51,9 @@ var lastName = prompt('What is his last Name?');
 console.log(firstName + ' ' + lastName);
 */
 
-
-
 /*****************************
-* Basic operators
-*/
+ * Basic operators
+ */
 /*
 var year, yearJohn, yearMark;
 now = 2018;
@@ -96,11 +84,9 @@ var x;
 console.log(typeof x);
 */
 
-
-
 /*****************************
-* Operator precedence
-*/
+ * Operator precedence
+ */
 /*
 var now = 2018;
 var yearJohn = 1989;
@@ -131,11 +117,9 @@ x--;
 console.log(x);
 */
 
-
-
 /*****************************
-* CODING CHALLENGE 1
-*/
+ * CODING CHALLENGE 1
+ */
 
 /*
 Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
@@ -149,22 +133,20 @@ GOOD LUCK 😀
 */
 
 var markHeight = 2;
-var markMass= 800;
+var markMass = 800;
 
-var johnHeight= 2;
-var johnMass= 100;
+var johnHeight = 2;
+var johnMass = 100;
 
-var johnBMI = johnMass/(johnHeight*johnHeight);
-var markBMI = markMass/(markHeight*markHeight);
+var johnBMI = johnMass / (johnHeight * johnHeight);
+var markBMI = markMass / (markHeight * markHeight);
 
 var markBigger = markBMI > johnBMI;
 
-console.log("john= "+johnBMI);
-console.log("mark= "+markBMI);
+console.log("john= " + johnBMI);
+console.log("mark= " + markBMI);
 
 console.log("mark bigger?" + markBigger);
-
-
 
 /*
 var massMark = 78; // kg
@@ -181,11 +163,9 @@ var markHigherBMI = BMIMark > BMIJohn;
 console.log('Is Mark\'s BMI higher than John\'s? ' + markHigherBMI);
 */
 
-
-
 /*****************************
-* If / else statements
-*/
+ * If / else statements
+ */
 /*
 var firstName = 'John';
 var civilStatus = 'single';
@@ -220,11 +200,9 @@ if (BMIMark > BMIJohn) {
 }
 */
 
-
-
 /*****************************
-* Boolean logic
-*/
+ * Boolean logic
+ */
 /*
 var firstName = 'John';
 var age = 20;
@@ -240,11 +218,9 @@ if (age < 13) {
 }
 */
 
-
-
 /*****************************
-* The Ternary Operator and Switch Statements
-*/
+ * The Ternary Operator and Switch Statements
+ */
 /*
 var firstName = 'John';
 var age = 14;
@@ -294,11 +270,9 @@ switch (true) {
 }
 */
 
-
-
 /*****************************
-* Truthy and Falsy values and equality operators
-*/
+ * Truthy and Falsy values and equality operators
+ */
 /*
 // falsy values: undefined, null, 0, '', NaN
 // truthy values: NOT falsy values
@@ -319,11 +293,9 @@ if (height === '23') {
 }
 */
 
-
-
 /*****************************
-* CODING CHALLENGE 2
-*/
+ * CODING CHALLENGE 2
+ */
 
 /*
 John and Mike both play basketball in different teams. In the latest 3 games, John's team scored 89, 120 and 103 points, while Mike's team scored 116, 94 and 123 points.
@@ -339,53 +311,28 @@ John and Mike both play basketball in different teams. In the latest 3 games, Jo
 
 //1)
 
-var teamJohn = [89,120,103];
-var teamMike = [116,94,123];
+var teamJohn = [89, 120, 103];
+var teamMike = [116, 94, 123];
 
-
-var johnAVG = (teamJohn[0]+teamJohn[1]+teamJohn[2])/3;
+var johnAVG = (teamJohn[0] + teamJohn[1] + teamJohn[2]) / 3;
 
 console.log("John's team average = " + johnAVG);
 
+var mikeAVG = (teamMike[0] + teamMike[1] + teamMike[2]) / 3;
 
-var mikeAVG = (teamMike[0]+teamMike[1]+teamMike[2])/3;
+console.log("Mike's team average = " + mikeAVG);
 
-console.log("Mike's team average = "+mikeAVG);
-
-if(johnAVG>mikeAVG){
-    console.log("JOHN IS DA WINNDER");
+if (johnAVG > mikeAVG) {
+  console.log("JOHN IS DA WINNDER");
 }
-if(mikeAVG>johnAVG){
-    console.log("MIKE IS DA WINNDER");
+if (mikeAVG > johnAVG) {
+  console.log("MIKE IS DA WINNDER");
 }
-if(mikeAVG==johnAVG){
-    console.log("IS A DRAW!");
+if (mikeAVG == johnAVG) {
+  console.log("IS A DRAW!");
 }
 
 //4)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 var scoreJohn = (189 + 120 + 103) / 3;
@@ -413,11 +360,9 @@ if (scoreJohn > scoreMike) {
 }
 */
 
-
-
 /*****************************
-* Functions
-*/
+ * Functions
+ */
 /*
 function calculateAge(birthYear) {
     return 2018 - birthYear;
@@ -446,63 +391,34 @@ yearsUntilRetirement(1948, 'Mike');
 yearsUntilRetirement(1969, 'Jane');
 */
 
-
-
 /*****************************
 * Function Statements and Expressions
 
 */
 
 //function delcaration
-function calculateAge(birthYear){
-    
-    return 0;
-    
+function calculateAge(birthYear) {
+  return 0;
 }
-
 
 //functions expression
-var whatDoYou = function(job,firstName){
-    
-    switch(job){
-                    
-        case 'teacher':
-            return firstName + ' teaches kid how to code';
-        
-        case ' driver':
-            return firstName + ' drivers yll araround';
-        
-        case 'dog-walker':
-            return firstName + ' walks the dog';
-            
-        default:
-            return firstName + 'is unemploed lmao';
-    
-    }
-    
-    
-}
+var whatDoYou = function(job, firstName) {
+  switch (job) {
+    case "teacher":
+      return firstName + " teaches kid how to code";
 
-console.log(whatDoYou('fgh', 'mark'));
+    case " driver":
+      return firstName + " drivers yll araround";
 
+    case "dog-walker":
+      return firstName + " walks the dog";
 
+    default:
+      return firstName + "is unemploed lmao";
+  }
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(whatDoYou("fgh", "mark"));
 
 /*
 // Function declaration
@@ -527,11 +443,9 @@ console.log(whatDoYouDo('designer', 'Jane'));
 console.log(whatDoYouDo('retired', 'Mark'));
 */
 
-
-
 /*****************************
-* Arrays
-*/
+ * Arrays
+ */
 /*
 // Initialize new array
 var names = ['John', 'Mark', 'Jane'];
@@ -563,11 +477,9 @@ var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'J
 console.log(isDesigner);
 */
 
-
-
 /*****************************
-* CODING CHALLENGE 3
-*/
+ * CODING CHALLENGE 3
+ */
 
 /*
 John and his family went on a holiday and went to 3 different restaurants. The bills were $124, $48 and $268.
@@ -586,31 +498,27 @@ GOOD LUCK 😀
 var johntips = [];
 var johnFinal = [];
 
-function  billCalculator(amount){
-    
-    if(amount< 50){
-        tip= amount*0.2;
-        result = amount - tip
-        johntips.push(tip);
-        johnFinal.push(result);
-        
-    }
-    
-    if(amount >=50 && amount<201){
-        tip =amount*0.25;
-        result=  amount-tip
-        johntips.push(tip);
-        johnFinal.push(result);
-    }
-    
-    if(amount> 202){
-        tip = amount*0.1;
-        result = amount-tip
-        johntips.push(tip);
-        johnFinal.push(result);
-        
-    }
-    
+function billCalculator(amount) {
+  if (amount < 50) {
+    tip = amount * 0.2;
+    result = amount - tip;
+    johntips.push(tip);
+    johnFinal.push(result);
+  }
+
+  if (amount >= 50 && amount < 201) {
+    tip = amount * 0.25;
+    result = amount - tip;
+    johntips.push(tip);
+    johnFinal.push(result);
+  }
+
+  if (amount > 202) {
+    tip = amount * 0.1;
+    result = amount - tip;
+    johntips.push(tip);
+    johnFinal.push(result);
+  }
 }
 
 billCalculator(124);
@@ -624,26 +532,6 @@ console.log("third tip = " + johntips[2]);
 console.log("first final amount = " + johnFinal[0]);
 console.log("Second final amount= " + johnFinal[1]);
 console.log("third final amount = " + johnFinal[2]);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 function tipCalculator(bill) {
@@ -670,11 +558,22 @@ var finalValues = [bills[0] + tips[0],
 console.log(tips, finalValues);
 */
 
-
-
 /*****************************
-* Objects and properties
-*/
+ * Objects and properties
+ */
+
+var john = {
+  firstName: "John",
+  lastName: "Doe",
+  DOB: 2000,
+  family: ["jane", "jose", "jim"],
+  job: "teacher",
+  isMarried: false
+};
+
+console.log(john.firstName);
+console.log(john["lastName"]);
+
 /*
 // Object literal
 var john = {
@@ -703,11 +602,26 @@ jane['lastName'] = 'Smith';
 console.log(jane);
 */
 
-
-
 /*****************************
-* Objects and methods
-*/
+ * Objects and methods
+ */
+
+var john = {
+  firstName: "John",
+  lastName: "Smith",
+  birthYear: 1992,
+  family: ["Jane", "Mark", "Bob", "Emily"],
+  job: "teacher",
+  isMarried: false,
+  calcAge: function() {
+    this.age = 2018 - this.birthYear;
+  }
+};
+
+john.calcAge();
+
+console.log(john.calcAge());
+
 /*
 var john = {
     firstName: 'John',
@@ -725,11 +639,9 @@ john.calcAge();
 console.log(john);
 */
 
-
-
 /*****************************
-* CODING CHALLENGE 4
-*/
+ * CODING CHALLENGE 4
+ */
 
 /*
 Let's remember the first coding challenge where Mark and John compared their BMIs. Let's now implement the same functionality with objects and methods.
@@ -741,6 +653,46 @@ Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and heig
 
 GOOD LUCK 😀
 */
+
+var mark = {
+  firstName: "Mark",
+  lastName: "Marron",
+  mass: 800,
+  height: 2.1,
+  calcBMI: function() {
+    this.BMI = this.mass / (this.height * 2);
+    return this.BMI;
+  }
+};
+
+var johnny = {
+  firstName: "Johnny",
+  lastName: "Cash",
+  mass: 800,
+  height: 2.1,
+  calcBMI: function() {
+    this.BMI = this.mass / (this.height * 2);
+    return this.BMI;
+  }
+};
+
+var johnnyBMI = johnny.calcBMI();
+var markBMI = mark.calcBMI();
+
+if (johnnyBMI > markBMI) {
+  console.log(johnny.firstName + " " + johnny.lastName + " has higher BMI");
+}
+if (markBMI > johnnyBMI) {
+  console.log(mark.firstName + " " + mark.lastName + " has higher BMI");
+}
+
+if (johnnyBMI == markBMI) {
+  console.log("DRAW");
+}
+
+console.log("Mark's BMI = " + markBMI);
+console.log("Johnny's BMI = " + johnnyBMI);
+
 /*
 var john = {
     fullName: 'John Smith',
@@ -771,11 +723,33 @@ if (john.calcBMI() > mark.calcBMI()) {
 }
 */
 
-
-
 /*****************************
-* Loops and iteration
-*/
+ * Loops and iteration
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 // for loop
@@ -822,11 +796,9 @@ for (var i = john.length - 1; i >= 0; i--) {
 }
 */
 
-
-
 /*****************************
-* CODING CHALLENGE 5
-*/
+ * CODING CHALLENGE 5
+ */
 
 /*
 Remember the tip calculator challenge? Let's create a more advanced version using everything we learned!
