@@ -803,82 +803,82 @@ GOOD LUCK 😀
 //var tips = [];
 //var finalAmounts = [];
 
-var johnBills = {
-  bills: [124, 48, , 268, 42],
-  tips: [],
-  finalAmounts: [],
-  billCalc: function() {
-    for (var i = 0; i < this.bills.length; i++) {
-      var bills = this.bills[i];
+//var johnBills = {
+//  bills: [124, 48, , 268, 42],
+//  tips: [],
+//  finalAmounts: [],
+//  billCalc: function() {
+//    for (var i = 0; i < this.bills.length; i++) {
+//      var bills = this.bills[i];
+//
+//      if (bills <= 50) {
+//        var tip = bills * 0.2;
+//        var finalAmount = tip + bills;
+//        this.tips.push(tip);
+//        this.finalAmounts.push(finalAmount);
+//      }
+//
+//      if (bills >= 50 && bills < 201) {
+//        var tip = bills * 0.15;
+//        var finalAmount = tip + bills;
+//        this.tips.push(tip);
+//        this.finalAmounts.push(finalAmount);
+//      }
+//
+//      if (bills > 202) {
+//        var tip = bills * 0.1;
+//        var finalAmount = tip + bills;
+//        this.tips.push(tip);
+//        this.finalAmounts.push(finalAmount);
+//      }
+//    }
+//  }
+//};
+//
+//johnBills.billCalc();
+//
+//var tips = johnBills.tips;
+//var amount = johnBills.finalAmounts;
+//
+//console.log("these are tips " + tips);
+//console.log("these are final amounts " + amount);
+//
+//var marksBills = [77, 375, 110, 45];
+//var markTips = [];
+//var markFinalAmount = [];
+//
+//function pushBill(bills, percentage) {
+//  var tip = bills * percentage;
+//  var amount = tip + bills;
+//
+//  markTips.push(tip);
+//  markFinalAmount.push(amount);
+//}
+//
+//function calcMarkBills() {
+//  for (var j = 0; j <= marksBills.length; j++) {
+//    var bills = marksBills[j];
+//
+//    if (bills < 100) {
+//      pushBill(bills, 0.2);
+//    }
+//
+//    if (bills > 100 && bills < 300) {
+//      pushBill(bills, 0.1);
+//    }
+//
+//    if (bills > 300) {
+//      pushBill(bills, 0.25);
+//    }
+//  }
+//}
+//
+//calcMarkBills();
+//
+//console.log("marks tips are " + markTips);
+//console.log("marks total bill are " + markFinalAmount);
 
-      if (bills <= 50) {
-        var tip = bills * 0.2;
-        var finalAmount = tip + bills;
-        this.tips.push(tip);
-        this.finalAmounts.push(finalAmount);
-      }
 
-      if (bills >= 50 && bills < 201) {
-        var tip = bills * 0.15;
-        var finalAmount = tip + bills;
-        this.tips.push(tip);
-        this.finalAmounts.push(finalAmount);
-      }
-
-      if (bills > 202) {
-        var tip = bills * 0.1;
-        var finalAmount = tip + bills;
-        this.tips.push(tip);
-        this.finalAmounts.push(finalAmount);
-      }
-    }
-  }
-};
-
-johnBills.billCalc();
-
-var tips = johnBills.tips;
-var amount = johnBills.finalAmounts;
-
-console.log("these are tips " + tips);
-console.log("these are final amounts " + amount);
-
-var marksBills = [77, 375, 110, 45];
-var markTips = [];
-var markFinalAmount = [];
-
-function pushBill(bills, percentage) {
-  var tip = bills * percentage;
-  var amount = tip + bills;
-
-  markTips.push(tip);
-  markFinalAmount.push(amount);
-}
-
-function calcMarkBills() {
-  for (var j = 0; j <= marksBills.length; j++) {
-    var bills = marksBills[j];
-
-    if (bills < 100) {
-      pushBill(bills, 0.2);
-    }
-
-    if (bills > 100 && bills < 300) {
-      pushBill(bills, 0.1);
-    }
-
-    if (bills > 300) {
-      pushBill(bills, 0.25);
-    }
-  }
-}
-
-calcMarkBills();
-
-console.log("marks tips are " + markTips);
-console.log("marks total bill are " + markFinalAmount);
-
-/*
 var john = {
     fullName: 'John Smith',
     bills: [124, 48, 268, 180, 42],
@@ -954,4 +954,4 @@ if (john.average > mark.average) {
 } else if (mark.average > john.average) {
     console.log(mark.fullName + '\'s family pays higher tips, with an average of $' + mark.average);
 }
-*/
+
