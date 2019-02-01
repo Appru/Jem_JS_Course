@@ -843,11 +843,40 @@ var amount = johnBills.finalAmounts;
 console.log("these are tips " + tips);
 console.log("these are final amounts " + amount);
 
+var marksBills = [77, 375, 110, 45];
+var markTips = [];
+var markFinalAmount = [];
 
+function pushBill(bills, percentage) {
+  var tip = bills * percentage;
+  var amount = tip + bills;
 
+  markTips.push(tip);
+  markFinalAmount.push(amount);
+}
 
+function calcMarkBills() {
+  for (var j = 0; j <= marksBills.length; j++) {
+    var bills = marksBills[j];
 
+    if (bills < 100) {
+      pushBill(bills, 0.2);
+    }
 
+    if (bills > 100 && bills < 300) {
+      pushBill(bills, 0.1);
+    }
+
+    if (bills > 300) {
+      pushBill(bills, 0.25);
+    }
+  }
+}
+
+calcMarkBills();
+
+console.log("marks tips are " + markTips);
+console.log("marks total bill are " + markFinalAmount);
 
 /*
 var john = {
