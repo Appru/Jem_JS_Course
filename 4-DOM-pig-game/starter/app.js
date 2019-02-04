@@ -37,9 +37,7 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
       
         
     } 
-      if(prevDice == 6){
-          console.log('two sixes= ');
-      }
+     
       
       else {
       //next player turn
