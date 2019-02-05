@@ -12,40 +12,54 @@ GAME RULES:
 var scores, roundScores, activePlayer, gamePlaying;
 
 init();
+var lastDice;
+
+//TODO MAKE SUBMIT BUTTON AND FUCNTION THAT GETS THE NUMBER
+
 
 //document.querySelector('#current-' + activePlayer) .innerHTML = '<em>'+ dice +'</em>';
 
 document.querySelector(".btn-roll").addEventListener("click", function() {
   if (gamePlaying) {
     //1 random number
-     
-    var dice = Math.floor(Math.random() * 2) + 5;
-    var firsoll= 0
-    var secondRoll = 0;
+
+    var dice = Math.floor(Math.random() * 3) + 4;
+
+    var currentdice;
+
     //2 display result
     var diceDOM = document.querySelector(".dice");
     diceDOM.style.display = "block";
     diceDOM.src = "dice-" + dice + ".png";
     console.log(dice);
 
+      
     //3 update the round score - only if !=1
-      
-      
+
+    if (lastDice == 6 && dice == 6) {
+      console.log("two sixs");
+   scores[activePlayer];
+    
+    document.querySelector("#current-" + activePlayer).textContent= 0;
+    document.querySelector("#score-" + activePlayer).textContent='0';
+        nextPlayer();
+    }
+
     if (dice !== 1) {
       //add the score
-      roundScore += dice;document.querySelector("#current-" + activePlayer).textContent =roundScore;
-      
-        
-    } 
-     
-      
-      else {
+      roundScore += dice;
+      document.querySelector(
+        "#current-" + activePlayer).textContent = roundScore;
+    } else {
       //next player turn
 
       nextPlayer();
     }
+
+    lastDice = dice;
   }
 });
+var x;
 
 document.querySelector(".btn-hold").addEventListener("click", function() {
   if (gamePlaying) {
@@ -58,8 +72,15 @@ document.querySelector(".btn-hold").addEventListener("click", function() {
     document.querySelector("#score-" + activePlayer).textContent =
       scores[activePlayer];
 
+      var input = document.querySelector('.form').value;
+      console.log(input);
+      //validity check
+      
+      
+      
     //check if player has won the game
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= input) {
+        console.log(formValue);
       document.querySelector("#name-" + activePlayer).textContent = "Winner!";
       document.querySelector(".dice").style.display = "none";
       document
@@ -97,6 +118,7 @@ function init() {
   activePlayer = 0;
   roundScore = 0;
   gamePlaying = true;
+  input = 0;
 
   document.querySelector(".dice").style.display = "none";
 
@@ -111,12 +133,11 @@ function init() {
   document.querySelector(".player-0-panel").classList.remove("active");
   document.querySelector(".player-0-panel").classList.add("active");
 
+
   document.querySelector(".player-1-panel").classList.remove("active");
 }
 
-function doubleSix(){
-    
-}
+
 
 /*
 YOUR 3 CHALLENGES
@@ -126,4 +147,3 @@ Change the game to follow these rules:
 2. Add an input field to the HTML where players can set the winning score, so that they can change the predefined score of 100. (Hint: you can read that value with the .value property in JavaScript. This is a good oportunity to use google to figure this out :)
 3. Add another dice to the game, so that there are two dices now. The player looses his current score when one of them is a 1. (Hint: you will need CSS to position the second dice, so take a look at the CSS code for the first one.)
 */
-
