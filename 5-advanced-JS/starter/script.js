@@ -305,81 +305,73 @@ c) correct answer (I would use a number for this)
 
 
 
-function Question(question,answers,correctAnswer){
-    
+
+var Questions = function (question, answers, correctAnswer) {
     this.question = question;
-    this.answers = [];
-    this.correctAnswers = correctAnswer;
-    
+    this.answers = answers;
+    this.correctAnswer = correctAnswer;
+
+
+
+}
+
+var Q1 = new Questions('whats the day?', [' epic sauce', ' happy', ' soy face'], 0);
+var Q2 = new Questions('best movie?', [' jaws', ' Avatar 2', ' ice age?', ], 1);
+var Q3 = new Questions('best song?', [' armodilla', ' the rock singing', ' happy days theme song', ], 2);
+
+Questions.prototype.choose = function () {
+    var completeQuestions = [Q1, Q2, Q3];
+    var q = completeQuestions[Math.floor(Math.random() * completeQuestions.length)];
+
+    console.log(q.question);
+
+    for (var i = 0; i < completeQuestions.length; i++) {
+        console.log(i + q.answers[i]);
+    }
+
+    return q.correctAnswer;
+
+    //console.log(q.correctAnswer);
+
+
+}
+
+Questions.prototype.userInput = function() {
+
+ x = q.correctAnswer;
+
+    var input = parseInt(prompt("Please enter a number for your answer"));
+
+
+    if (input == x) {
+        console.log('CORRECT');
+
+
+    } else if (input == null) {
+        return;
+    } else {
+        console.log('WRONG!')
+        
+
     }
 
 
-
-
-
-var Q1 = new Question('what is cool?',[],'correct answer');
-var Q2 = new Question('what is cash money?',['cash?','money?'],' the correct answer?');
-
-var xz = Q1.answers = ['water','teeth'];
-
-var completeQuestions = [];
-completeQuestions.push(Q1,Q2);
-
-function chooseQuestion(arr){
-    var rand =  Math.floor(Math.random() * 2);
-    
-    console.log( arr[rand]);
-    
 }
 
 
-chooseQuestion(completeQuestions);
-
-
-console.log(completeQuestions);
 
 
 
 
+//console.log(q);
+/*
+--- Expert level ---
 
+8. After you display the result, display the next random question, so that the game never ends (Hint: write a function for this and call it right after displaying the result)
 
+9. Be careful: after Task 8, the game literally never ends. So include the option to quit the game if the user writes 'exit' instead of the answer. In this case, DON'T call the function from task 8.
 
+10. Track the user's score to make the game more fun! So each time an answer is correct, add 1 point to the score (Hint: I'm going to use the power of closures for this, but you don't have to, just do this with the tools you feel more comfortable at this point).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+11. Display the score in the console. Use yet another method for this.
+*/
