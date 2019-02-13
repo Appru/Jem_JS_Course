@@ -342,11 +342,12 @@ Questions.prototype.checkAnswers = function (ans) {
 }
 
 var counter = 0;
+ var allQuestions = [Q1, Q2, Q3];
 
 function isTrue() {
 
 
-    var allQuestions = [Q1, Q2, Q3];
+   
 
     var n = Math.floor(Math.random() * allQuestions.length);
 
@@ -365,6 +366,7 @@ function isTrue() {
 
     } else {
         console.log('WRONG!!');
+        console.log('Your final Score is '+counter)
     }
 
 
