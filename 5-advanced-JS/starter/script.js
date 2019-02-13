@@ -309,50 +309,62 @@ c) correct answer (I would use a number for this)
 var Questions = function (question, answers, correctAnswer) {
     this.question = question;
     this.answers = answers;
-    this.correctAnswer = correctAnswer;
+    this.correct = correctAnswer;
 
 
 
 }
 
-var Q1 = new Questions('whats the day?', [' epic sauce', ' happy', ' soy face'], 0);
+var Q1 = new Questions('whats the day?', [' epic sauce', ' happy', ' soy face'], 1);
 var Q2 = new Questions('best movie?', [' jaws', ' Avatar 2', ' ice age?', ], 1);
-var Q3 = new Questions('best song?', [' armodilla', ' the rock singing', ' happy days theme song', ], 2);
+var Q3 = new Questions('best song?', [' armodilla', ' the rock singing', ' happy days theme song', ], 1);
 
-Questions.prototype.choose = function () {
-    var completeQuestions = [Q1, Q2, Q3];
-    var q = completeQuestions[Math.floor(Math.random() * completeQuestions.length)];
+Questions.prototype.displayQuestion = function () {
+    console.log(this.question);
 
-    console.log(q.question);
-
-    for (var i = 0; i < completeQuestions.length; i++) {
-        console.log(i + q.answers[i]);
+    for (var i = 0; i < this.answers.length; i++) {
+        console.log(i + ': ' + this.answers[i]);
     }
-
-    return q.correctAnswer;
-
-    //console.log(q.correctAnswer);
-
-
 }
 
-Questions.prototype.userInput = function() {
-
- x = q.correctAnswer;
-
-    var input = parseInt(prompt("Please enter a number for your answer"));
 
 
-    if (input == x) {
-        console.log('CORRECT');
+Questions.prototype.checkAnswers = function (ans) {
 
+    if (ans === this.correct) {
 
-    } else if (input == null) {
-        return;
+        return true;
     } else {
-        console.log('WRONG!')
-        
 
+
+        return false;
+    }
+}
+
+var counter = 0;
+
+function isTrue() {
+
+
+    var allQuestions = [Q1, Q2, Q3];
+
+    var n = Math.floor(Math.random() * allQuestions.length);
+
+    allQuestions[n].displayQuestion();
+
+
+    var input = parseInt(prompt('Please choose ya answer'));
+
+    allQuestions[n].checkAnswers(input);
+
+    if (allQuestions[n].checkAnswers(input) == true) {
+        console.log('CORRECT-A-MUNDO!');
+        counter++;
+        console.log('total-score ' + counter);
+        isTrue();
+
+    } else {
+        console.log('WRONG!!');
     }
 
 
@@ -360,6 +372,7 @@ Questions.prototype.userInput = function() {
 
 
 
+isTrue();
 
 
 
