@@ -64,7 +64,8 @@ body {
 }
 
 .budget__income,
-.budget__expenses {
+.budget__expenses,
+.budget__reset{
     padding: 12px;
     text-transform: uppercase;
 }
@@ -76,10 +77,25 @@ body {
 
 .budget__expenses {
     background-color: #FF5049;
+     margin-bottom: 10px;
+}
+
+.budget__reset{
+     margin-bottom: 10px;
+    background-color:coral;
+    cursor: pointer
+    
+    
+}
+.budget__reset--text{
+    color: white;
+    margin-top: 2px;
+    text-align: center;
 }
 
 .budget__income--text,
-.budget__expenses--text {
+.budget__expenses--text
+{
     float: left;
     font-size: 13px;
     color: #444;
@@ -164,7 +180,8 @@ body {
     margin-left: 10px;
 }
 
-.add__btn:active { transform: translateY(2px); }
+.add__btn:active,
+.budget__reset:active { transform: translateY(2px); }
 
 .add__type:focus,
 .add__description:focus,
