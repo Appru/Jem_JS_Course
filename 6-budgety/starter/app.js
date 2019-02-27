@@ -465,7 +465,14 @@ var controller = (function (budgetCtrl, UICtrl) {
 
 
         };
-           
+           var crtlResetData = function(){
+               //delete all items from stucture
+               
+               //reset the totals
+               
+               //update the UI.
+               
+           }
 
 
     };
