@@ -107,6 +107,23 @@ var budgetController = (function () {
             return newItem;
         },
 
+        sortItems: function (type) {
+            var val, newa;
+            val = data.allItems[type].map(function (current) {
+                return current.value;
+
+            });
+
+            val.sort(function (a, b) {
+                return a - b;
+            })
+
+            console.log(val);
+
+        },
+
+
+
         deleteItem: function (type, id) {
             var ids, index;
 
@@ -123,6 +140,8 @@ var budgetController = (function () {
 
 
         },
+
+
 
         calculateBudget: function () {
 
@@ -195,7 +214,8 @@ var UIController = (function () {
         percentageLabel: '.budget__expenses--percentage',
         container: '.container',
         expensesPerLabel: '.item__percentage',
-        dataLabel: '.budget__title--month'
+        dataLabel: '.budget__title--month',
+        resetBtn: '.budget__reset'
 
     };
 
@@ -280,6 +300,11 @@ var UIController = (function () {
 
 
         },
+        
+        changeOrder: function (){
+            
+            
+        },
 
         clearFeilds: function () {
             var feilds, feildsArray;
@@ -358,10 +383,10 @@ var UIController = (function () {
                 DOMstrings.inputDescription + ',' +
                 DOMstrings.inputValue);
 
-            nodeListForEach(feilds,function(cur){
-               cur.classList.toggle('red-focus'); 
+            nodeListForEach(feilds, function (cur) {
+                cur.classList.toggle('red-focus');
             });
-            
+
             document.querySelector(DOMstrings.inputBtn).classList.toggle('red');
         },
 
@@ -388,6 +413,14 @@ var controller = (function (budgetCtrl, UICtrl) {
         document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
 
         document.querySelector(DOM.inputType).addEventListener('change', UICtrl.changeType);
+
+        document.querySelector(DOM.resetBtn).addEventListener('click', sortItems);
+    };
+
+    var sortItems = function () {
+
+        budgetCtrl.sortItems('inc');
+
     };
 
     var updateBudget = function () {
@@ -465,14 +498,7 @@ var controller = (function (budgetCtrl, UICtrl) {
 
 
         };
-           var crtlResetData = function(){
-               //delete all items from stucture
-               
-               //reset the totals
-               
-               //update the UI.
-               
-           }
+
 
 
     };
@@ -487,7 +513,7 @@ var controller = (function (budgetCtrl, UICtrl) {
                 totalInc: 0,
                 totalExp: 0
             });
-            
+
 
             setupEventListeners();
         }
