@@ -108,17 +108,18 @@ var budgetController = (function () {
         },
 
         sortItems: function (type) {
-            var val, newa;
-            val = data.allItems[type].map(function (current) {
+            var newOrder, newa;
+            newOrder = data.allItems[type].map(function (current) {
                 return current.value;
 
             });
 
-            val.sort(function (a, b) {
+            newOrder.sort(function (a, b) {
                 return a - b;
             })
 
-            console.log(val);
+            return newOrder
+            console.log(newOrder);
 
         },
 
@@ -215,7 +216,8 @@ var UIController = (function () {
         container: '.container',
         expensesPerLabel: '.item__percentage',
         dataLabel: '.budget__title--month',
-        resetBtn: '.budget__reset'
+        resetBtn: '.budget__reset',
+        item: '.item clearfix'
 
     };
 
@@ -300,10 +302,11 @@ var UIController = (function () {
 
 
         },
-        
-        changeOrder: function (){
+
+        changeOrder: function (newOrder) {
+
             
-            
+
         },
 
         clearFeilds: function () {
@@ -419,7 +422,9 @@ var controller = (function (budgetCtrl, UICtrl) {
 
     var sortItems = function () {
 
-        budgetCtrl.sortItems('inc');
+        var newOrder = budgetCtrl.sortItems('inc');
+        UICtrl.changeOrder(newOrder);
+
 
     };
 
