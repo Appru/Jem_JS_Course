@@ -25,7 +25,7 @@ HINT: Use some of the ES6 features: classes, subclasses, template strings, defau
 
 
 class Town {
-    constructor(noParks, noStreets, name, yearBuild, allAges) {
+    constructor(noParks = 3, noStreets = 4, name, yearBuild, allAges) {
 
         this.noParks = noParks;
         this.noStreets = noStreets;
@@ -37,44 +37,70 @@ class Town {
 }
 
 
-class Parks extends Town {
-    constructor(noTrees, parkArea) {
-        super(noParks, noStreets, name, yearBuild, allAges);
+class Parks {
+    constructor(name, yearBuild, noTrees, parkArea) {
 
+        this.name = name;
+        this.yearBuild = yearBuild;
         this.noTrees = noTrees;
         this.parkArea = parkArea;
-
     }
 
     treeDensity() {
-        const td = notTrees / parkArea;
+        const td = this.noTrees / this.parkArea;
 
-        return td;
-    }
-
-    avAgeofPark() {
-        const ap = allAges / noParks;
-
-        if (ap > 1000) {
-            return [name, ap];
-        } else {
-            return ap;
+        if (this.noTrees > 1000) {
+            console.log(`The park ${this.name} has over 1000 trees lmao`);
         }
 
-
-
+        console.log(`The Tree desity of ${this.name} is ${td} per square km `);
     }
+
+    calculateAge() {
+        const age = new Date().getFullYear() - this.yearBuild;
+
+        return (age)
+    }
+
+
 }
 
 
-const Park1 = new Parks()
 
 
 
+const Park1 = new Parks('Highgate woods', 1962, 400, 600);
+const Park2 = new Parks('Cherry tree wood', 1952, 2000, 500);
+const Park3 = new Parks('Frinsbury Park', 1979, 543, 900);
 
 
 
+function averageAges() {
+    const age1 = Park1.calculateAge();
+    const age2 = Park2.calculateAge();
+    const age3 = Park3.calculateAge();
+
+    const ages = [];
+    ages.push(age1, age2, age3);
+
+    const sum = function (total, num) {
+        return total + num;
+    }
+
+    const realSum = ages.reduce(sum);
+
+    const noOfParks = realSum / ages.length;
 
 
 
+    console.log(`The average age of ${ages.length} Parks is ${noOfParks}`);
 
+
+
+}
+
+console.log('---------PARK REPORT, BROTHA-----');
+averageAges();
+Park1.treeDensity();
+Park2.treeDensity();
+Park3.treeDensity();
