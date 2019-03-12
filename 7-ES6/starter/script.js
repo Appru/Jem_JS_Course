@@ -65,13 +65,36 @@ class Parks {
 
 }
 
+class Streets {
+    constructor(name,yearBuild,streetLength,{streetSize = 'normal'}={streetSize:'normal'}){
+        this.name = name;
+        this.yearBuild = yearBuild;
+        this.streetLength = streetLength;
+        this.streetSize = streetSize;
+    }
+    
+    streetOutput(){
+        console.log(`${this.name} was built in ${this.yearBuild} and is of a ${this.streetSize} size `);
+        
+    }
+    
+}
 
 
 
 
-const Park1 = new Parks('Highgate woods', 1962, 400, 600);
-const Park2 = new Parks('Cherry tree wood', 1952, 2000, 500);
-const Park3 = new Parks('Frinsbury Park', 1979, 543, 900);
+const allPark = [ 
+        Park1 = new Parks('Highgate woods', 1962, 400, 600),
+        Park2 = new Parks('Cherry tree wood', 1952, 2000, 500),
+        Park3 = new Parks('Frinsbury Park', 1979, 543, 900)];
+
+ const allStreets = [ 
+    Street1 = new Streets('Fortis Green Ave.',1893,50,{streetSize:'big'}),
+    Street2 = new Streets('College Road',1941,150,{streetSize:'huge'}),
+    Street3 = new Streets('Muswell Hill Road',1923,30),
+    Street4 = new Streets('Dukes Ave.',1978,12,{streetSize:'small'})];
+
+
 
 
 
@@ -104,3 +127,10 @@ averageAges();
 Park1.treeDensity();
 Park2.treeDensity();
 Park3.treeDensity();
+
+console.log('------STREET REPORT, BROTHA-----');
+Street1.streetOutput();
+Street2.streetOutput();
+Street3.streetOutput();
+Street4.streetOutput();
+
