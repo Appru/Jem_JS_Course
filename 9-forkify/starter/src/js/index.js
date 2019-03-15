@@ -11,6 +11,17 @@ const state = {
 
 };
 
+const controlSearch = () => {
+    // 1) get the query from the view
+    const query = 'pizza' //TODO
+
+}
+
+document.querySelector('.search').addEventListener('submit', e =>{
+    e.preventDefault();
+    controlSearch();
+});
+
 const controlSearch = () =>{
     // 1) get the query from the view.
 
